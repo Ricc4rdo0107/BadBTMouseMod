@@ -3,6 +3,7 @@
 Credits: https://github.com/Ricc4rdo0107 | Riccardo Zappitelli
 Original Creation: https://github.com/Shubhamvis98/badbt
 """
+import random as rd
 import curses, sys
 try:
     from mouse_emulate import MouseClient
@@ -27,31 +28,46 @@ if len(sys.argv) == 2:
 else:
     sensibility = 10
 
+right = 0
+left = 272
+
 try:
     while True:
         char = screen.getch()
         if char == ord('q'):
             break
+        elif char == ord("r"):
+            screen.addstr(0, 0, 'right click   ')
+            client.state[0] = right
+            client.state[1] = 1
+            client.state[2] = 1
+            client.state[3] = 0
+        elif char == ord("l"):
+            screen.addstr(0, 0, 'left click   ')
+            client.state[0] = left
+            client.state[1] = 1
+            client.state[2] = 1
+            client.state[3] = 0
         elif char == curses.KEY_RIGHT:
-            screen.addstr(0, 0, 'right')
+            screen.addstr(0, 0, 'right arrow  ')
             client.state[0] = 0
             client.state[1] = sensibility
             client.state[2] = 0
             client.state[3] = 0
         elif char == curses.KEY_LEFT:
-            screen.addstr(0, 0, 'left ')
+            screen.addstr(0, 0, 'left arrow   ')
             client.state[0] = 0
             client.state[1] = 255-sensibility
             client.state[2] = 0
             client.state[3] = 0
         elif char == curses.KEY_UP:
-            screen.addstr(0, 0, 'up   ')
+            screen.addstr(0, 0, 'up arrow    ')
             client.state[0] = 0
             client.state[1] = 0
             client.state[2] = 255-sensibility
             client.state[3] = 0
         elif char == curses.KEY_DOWN:
-            screen.addstr(0, 0, 'down ')
+            screen.addstr(0, 0, 'down arrow   ')
             client.state[0] = 0
             client.state[1] = 0
             client.state[2] = sensibility
