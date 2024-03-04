@@ -22,7 +22,7 @@ screen.keypad(True)
 
 if len(sys.argv) == 2:
     if sys.argv[1].isdigit():
-        sensibility = sys.argv[1]
+        sensibility = int(sys.argv[1])
     else:
         print("Usage: python3 mouse_client_mod.py <sensibility>")
 else:
