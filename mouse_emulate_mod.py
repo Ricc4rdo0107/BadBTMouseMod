@@ -24,7 +24,7 @@ if len(sys.argv) == 2:
     if sys.argv[1].isdigit():
         sensibility = int(sys.argv[1])
     else:
-        print("Usage: python3 mouse_client_mod.py <sensibility>")
+        print("Usage: python3 mouse_client_mod.py <sensibility:int>")
 else:
     sensibility = 10
 
