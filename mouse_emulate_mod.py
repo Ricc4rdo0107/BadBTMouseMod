@@ -28,8 +28,8 @@ if len(sys.argv) == 2:
 else:
     sensibility = 10
 
-right = 0
-left = 272
+right = 0 #I still don't know
+left = 1
 
 try:
     while True:
